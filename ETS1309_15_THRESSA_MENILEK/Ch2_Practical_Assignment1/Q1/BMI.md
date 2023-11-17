@@ -1,4 +1,4 @@
-  #1    BMI
+#1    BMI
 Analysis:
 •	Input (s): Weight, Height
 
