@@ -10,4 +10,4 @@ Step 4: Calculate the number of characters in the file by multiplying the file s
 Step 5: Calculate the time it will take to transmit the file by dividing the number of characters by the transmission speed.
 Step 6: Convert the time to hours, minutes, and seconds for better readability.
 Step 7: Display the time it will take to transmit the file in hours, minutes, and seconds.
-Step 8: Stop
+Step 8: Stop.
