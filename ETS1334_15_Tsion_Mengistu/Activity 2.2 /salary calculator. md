@@ -1,4 +1,5 @@
 Analysis:
+
 Input(s): Employee_Name, Base_Salary, Weekly_Working_hours, Bonus_Rate_Per_Hour
 Output(s): Employee_Name, Bonus_Payment, Gross_Salary, Net_Salary
 Operation(s): 
@@ -8,6 +9,7 @@ Pension_Amount = Gross_Salary * Pension_Rate
 Tax_Amount = Gross_Salary * Tax_Rate
 Net_Salary = Gross_Salary – Pension_Amount – Tax_Amount
 Pseudocode:
+
 Step 1: Start
 Step 2: Declare variables for employee name, weekly working hours, bonus rate per hour, base salary, pension rate, and tax rate.
 Step 3: Read employee name, weekly working hours, bonus rate per hour, and base salary from the user.
