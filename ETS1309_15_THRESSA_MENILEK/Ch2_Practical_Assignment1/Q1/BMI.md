@@ -1,5 +1,5 @@
-#1    BMI
 Analysis:
+
 •	Input (s): Weight, Height
 
 •	Output(s): BMI
