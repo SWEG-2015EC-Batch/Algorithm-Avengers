@@ -1,8 +1,11 @@
 Analysis:
+
 •	Input(s): Reads File_Size_in_Bytes
 •	Output(s): Time_for_Transmission
 •	Operation(s): Time_for_Transmission = File_Size_in_Bytes/960
+
 Pseudocode
+
 •	Step 1: Start
 •	Step 2: Declare a variable for the file size in bytes and the transmission speed in characters per second.
 •	Step 3: Read the file size from the user.
@@ -11,3 +14,8 @@ Pseudocode
 •	Step 6: Convert the time to hours, minutes, and seconds for better readability.
 •	Step 7: Display the time it will take to transmit the file in hours, minutes, and seconds.
 •	Step 8: Stop
+
+Flow chart:
+
+![Screenshot_20231118-075219](https://github.com/SWEG-2015EC-Batch/Algorithm-Avengers/assets/149164024/34bab0be-e1d9-468a-8b59-ace942c7c4b2)
+
