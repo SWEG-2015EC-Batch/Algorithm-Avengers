@@ -20,7 +20,10 @@ Pseudocode:
 
 •	Step 6: Stop
 
-![Screenshot_20231118-073638](https://github.com/SWEG-2015EC-Batch/Algorithm-Avengers/assets/149164024/d34ed791-3934-4747-9b20-2caf74b5d2cc)
+Flow chart:
+
+![Screenshot_20231118-073638](https://github.com/SWEG-2015EC-Batch/Algorithm-Avengers/assets/149164024/01c1ad92-4d2e-4570-aba6-4e5f77328b20)
+
 
 
 
