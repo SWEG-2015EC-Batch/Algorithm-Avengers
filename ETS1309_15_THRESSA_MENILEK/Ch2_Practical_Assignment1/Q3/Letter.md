@@ -9,6 +9,7 @@ Analysis:
 	upper_case_letter=toupper(letter)
 
 	lower_case_letter=tolower(letter)
+
 Pseudocode:
 
 •	Step 1: start
@@ -24,3 +25,8 @@ Pseudocode:
 •	Step 6: Print letter
 
 •	Step 7: Stop
+
+Flow chart:
+
+![Screenshot_20231118-074749](https://github.com/SWEG-2015EC-Batch/Algorithm-Avengers/assets/149164024/915aba99-954a-45b6-80d3-5f2c33f4348f)
+
