@@ -17,3 +17,4 @@ Step 6: Calculate the tax amount by multiplying the gross salary by the tax rate
 Step 7: Calculate the net salary by subtracting the pension amount and tax amount from the gross salary.
 Step 8: Display the employee's name, gross salary, net salary, and bonus payment.
 Step 9: Stop
+
