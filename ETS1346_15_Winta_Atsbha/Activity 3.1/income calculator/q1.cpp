@@ -1,5 +1,4 @@
 
-// exercise 1 net salary calculator
 
 #include<iostream>
 using namespace std;
