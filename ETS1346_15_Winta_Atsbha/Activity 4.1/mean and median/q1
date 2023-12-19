@@ -1,48 +1,34 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-
+#include <cmath>
 using namespace std;
 
-double calculateArithmeticMean(const vector<int>& data) {
-    int sum = 0;
-    for (int value : data) {
-        sum += value;
-    }
-    return static_cast<double>(sum) / data.size();
-}
-
-double calculateMedian(const vector<int>& data) {
-    vector<int> sortedData = data;
-    sort(sortedData.begin(), sortedData.end());
-
-    size_t size = sortedData.size();
-    if (size % 2 == 0) {
-        return static_cast<double>(sortedData[size / 2 - 1] + 
-        sortedData[size / 2]) / 2.0;
-    } else {
-        return static_cast<double>(sortedData[size / 2]);
-    }
-}
-
 int main() {
-    vector<vector<int>> developers = {
-        {500, 750, 600},
-        {800, 900, 700},
-        {600, 400, 550},
-        {700, 600, 650}
-    };
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
 
-    for (size_t i = 0; i < developers.size(); ++i) {
-        vector<int>& loc = developers[i];
-        double averageLOC = calculateArithmeticMean(loc);
-        double medianLOC = calculateMedian(loc);
+    // Variables to keep track of sum and sum of squares
+    double sum = 0;
+    double sumOfSquares = 0;
 
-        cout << "Developer " << (i + 1) << endl;
-        cout << "Average Lines of Code: " << averageLOC << endl;
-        cout << "Median Lines of Code: " << medianLOC << endl;
-        cout << endl;
+    // Input loop to accept numbers from the user and calculate sum and sum of squares
+    cout << "Enter the numbers: ";
+
+    for (int i = 0; i < n; i++) {
+        double num;
+        cin >> num;
+        sum += num; // Calculate the sum
+        sumOfSquares += pow(num, 2); // Calculate the sum of squares
     }
+
+    // Calculate the mean and standard deviation
+    double mean = sum / n;
+    double variance = (sumOfSquares / n) - pow(mean, 2);
+    double stdDev = sqrt(variance);
+
+    // Print the mean and standard deviation
+    cout << "Mean: " << mean << endl;
+    cout << "Standard Deviation: " << stdDev << endl;
 
     return 0;
 }
