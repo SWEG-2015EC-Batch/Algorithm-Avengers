@@ -1,1 +1,48 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
+using namespace std;
+
+double calculateArithmeticMean(const vector<int>& data) {
+    int sum = 0;
+    for (int value : data) {
+        sum += value;
+    }
+    return static_cast<double>(sum) / data.size();
+}
+
+double calculateMedian(const vector<int>& data) {
+    vector<int> sortedData = data;
+    sort(sortedData.begin(), sortedData.end());
+
+    size_t size = sortedData.size();
+    if (size % 2 == 0) {
+        return static_cast<double>(sortedData[size / 2 - 1] + 
+        sortedData[size / 2]) / 2.0;
+    } else {
+        return static_cast<double>(sortedData[size / 2]);
+    }
+}
+
+int main() {
+    vector<vector<int>> developers = {
+        {500, 750, 600},
+        {800, 900, 700},
+        {600, 400, 550},
+        {700, 600, 650}
+    };
+
+    for (size_t i = 0; i < developers.size(); ++i) {
+        vector<int>& loc = developers[i];
+        double averageLOC = calculateArithmeticMean(loc);
+        double medianLOC = calculateMedian(loc);
+
+        cout << "Developer " << (i + 1) << endl;
+        cout << "Average Lines of Code: " << averageLOC << endl;
+        cout << "Median Lines of Code: " << medianLOC << endl;
+        cout << endl;
+    }
+
+    return 0;
+}
