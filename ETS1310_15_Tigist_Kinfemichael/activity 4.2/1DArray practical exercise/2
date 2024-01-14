@@ -1,49 +1,23 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
-
 int main() {
-    const int ROWS = 3;
-    const int COLS = 3;
-    int first[ROWS][COLS];
-    int second[ROWS][COLS];
-    int result[ROWS][COLS];
+    string input;
+    cout << "Enter a line of text: ";
+    getline(cin, input);
 
-    // input elements of first array
-    cout << "Enter elements of first array:" << endl;
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            cout << "Enter element [" << i << "][" << j << "]: ";
-            cin >> first[i][j];
-        }
+    // Output the text in all uppercase letters
+    locale loc;
+    for (char c : input) {
+        cout << toupper(c, loc);
     }
+   cout << endl;
 
-    // input elements of second array
-    cout << "Enter elements of second array:" << endl;
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            cout << "Enter element [" << i << "][" << j << "]: ";
-            cin >> second[i][j];
-        }
+    // Output the text in all lowercase letters
+    for (char c : input) {
+       cout << tolower(c, loc);
     }
-
-    // add equivalent elements of both arrays
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            result[i][j] = first[i][j] + second[i][j];
-        }
-    }
-
-    // print the resulting data elements in table form
-    cout << "Resulting data elements:" << endl;
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            cout << result[i][j] << "\t";
-        }
-        cout << endl;
-    }
+    cout << endl;
 
     return 0;
 }
-
-
