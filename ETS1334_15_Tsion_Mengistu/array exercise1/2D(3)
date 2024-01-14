@@ -1,1 +1,47 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
+int main() {
+    const int NUM_SCORES = 5;
+    const string SCORE_NAMES[NUM_SCORES] = {"Test", "Assignment", "Quiz", "Project", "Final"};
+    const int SCORE_WEIGHTS[NUM_SCORES] = {20, 20, 10, 30, 20};
+    int scores[NUM_SCORES];
+
+    // read in scores
+    for (int i = 0; i < NUM_SCORES; i++) {
+        cout << "Enter score for " << SCORE_NAMES[i] << ": ";
+        cin >> scores[i];
+    }
+
+    // calculate total mark and score level
+    int totalMark = 0;
+    for (int i = 0; i < NUM_SCORES; i++) {
+        totalMark += scores[i] ;
+    }
+
+    string scoreLevel;
+    if (totalMark >= 80) {
+        scoreLevel = "Excellent";
+    } else if (totalMark >= 60) {
+        scoreLevel = "Very Good";
+    } else if (totalMark >= 50) {
+        scoreLevel = "Fair";
+    } else if (totalMark >= 40) {
+        scoreLevel = "Poor";
+    } else {
+        scoreLevel = "Fail";
+    }
+
+    // print table
+    cout << setw(15) << left << "Score Type" << setw(10) << right << "Score" << endl;
+    cout << "----------------------" << endl;
+    for (int i = 0; i < NUM_SCORES; i++) {
+        cout << setw(15) << left << SCORE_NAMES[i] << setw(10) << right << scores[i] << endl;
+    }
+    cout << "----------------------" << endl;
+    cout << setw(15) << left << "Total Mark" << setw(10) << right << totalMark << endl;
+    cout << setw(15) << left << "Score Level" << setw(10) << right << scoreLevel << endl;
+
+    return 0;
+}
