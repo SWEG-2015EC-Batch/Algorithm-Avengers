@@ -1,19 +1,24 @@
+8
 #include <iostream>
 #include <string>
-
+using namespace std;
 int main() {
-    std::string first_name, middle_name, last_name;
+    string input;
+    cout << "Enter a line of text: ";
+    getline(cin, input);
 
-    std::cout << "Enter your first name: ";
-    std::cin >> first_name;
+    // Output the text in all uppercase letters
+    locale loc;
+    for (char c : input) {
+        cout << toupper(c, loc);
+    }
+   cout << endl;
 
-    std::cout << "Enter your middle name: ";
-    std::cin >> middle_name;
+    // Output the text in all lowercase letters
+    for (char c : input) {
+       cout << tolower(c, loc);
+    }
+    cout << endl;
 
-    std::cout << "Enter your last name: ";
-    std::cin >> last_name;
-
-    std::cout << "Your initials are: " << first_name[0] << middle_name[0] << last_name[0] << std::endl;
-
-    return 0;
+    return 0;
 }
