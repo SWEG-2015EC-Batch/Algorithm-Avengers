@@ -1,1 +1,19 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+    const int MAX_LENGTH = 50;
+    char pass[MAX_LENGTH] = "password";
+    char input[MAX_LENGTH];
 
+    cout << "Enter the password: ";
+    cin.getline(input, MAX_LENGTH);
+
+    if (strcmp(input, pass) == 0) {
+        cout << "Correct password!" << endl;
+    } else {
+        cout << "Incorrect password." << endl;
+    }
+
+    return 0;
+}
