@@ -1,0 +1,35 @@
+#include<iostream>
+#include<cstring>
+#include<iomanip>
+using namespace std;
+
+int main(){
+    char str[100],largest,least;
+    int freq[256]={0}, frequency[2]={0};
+
+    cout<<"Please type anything: ";
+    cin.getline(str,100);
+
+    for(int i=0; str[i]!='\0'; i++){
+        if(str[i]==' '){
+            continue;
+        }
+        freq[str[i]]++;
+        if (freq[str[i]] > frequency[0]) {
+                frequency[0] = freq[str[i]];
+                largest=str[i];
+            }
+            if (freq[str[i]] < frequency[0]) {
+                frequency[1] = freq[str[i]];
+                least=str[i];
+            }
+    }
+    
+    cout<<"The character with largest frequency is: '"<<largest<<setw(18)<<"' with a frequency of: "<<frequency[0]<<endl;
+    cout<<"The character with smallest frequency is: '"<<least<<setw(18)<<"' with a frequency of: "<<frequency[1]<<endl;  
+
+return 0;
+}
+
+
+
