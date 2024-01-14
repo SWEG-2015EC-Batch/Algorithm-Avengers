@@ -1,1 +1,22 @@
+#include <iostream>
+#include <string>
+int main() {
+    std::string input;
+    std::cout << "Enter a line of text: ";
+    std::getline(std::cin, input);
 
+    // Output the text in all uppercase letters
+    std::locale loc;
+    for (char c : input) {
+        std::cout << std::toupper(c, loc);
+    }
+   std::cout << std::endl;
+
+    // Output the text in all lowercase letters
+    for (char c : input) {
+       std::cout << std::tolower(c, loc);
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
