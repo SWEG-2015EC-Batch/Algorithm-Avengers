@@ -1,1 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using  namespace std;
+
+int main() {
+    vector<string> names;
+    int numNames;
+    cout << "Enter the number of names: ";
+   cin >> numNames;
+
+    for (int i = 0; i < numNames; i++) {
+        string name;
+        cout << "Enter name " << i + 1 << ": ";
+        cin >> name;
+        names.push_back(name);
+    }
+
+    sort(names.begin(), names.end());
+
+
+    cout << "\nSorted Names:\n";
+    for (const auto& name : names) {
+        cout << name << std::endl;
+    }
+
+    return 0;
+}
 
