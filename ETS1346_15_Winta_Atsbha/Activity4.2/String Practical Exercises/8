@@ -1,1 +1,24 @@
+8
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string input;
+    cout << "Enter a line of text: ";
+    getline(cin, input);
 
+    // Output the text in all uppercase letters
+    locale loc;
+    for (char c : input) {
+        cout << toupper(c, loc);
+    }
+   cout << endl;
+
+    // Output the text in all lowercase letters
+    for (char c : input) {
+       cout << tolower(c, loc);
+    }
+    cout << endl;
+
+    return 0;
+}
