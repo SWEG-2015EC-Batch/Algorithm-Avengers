@@ -1,0 +1,28 @@
+12
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    const int NUM_QUESTIONS = 10;
+    string answer_key = "ABCDABCDAB";
+    string student_answers;
+
+    cout << "Enter your answers (A, B, C, or D) for " << NUM_QUESTIONS << " questions: ";
+    cin >> student_answers;
+
+    int score = 0;
+    string marked_answers;
+    for (int i = 0; i < NUM_QUESTIONS; i++) {
+        if (student_answers[i] == answer_key[i]) {
+            score++;
+            marked_answers += "+";
+        } else {
+            marked_answers += "-";
+        }
+    }
+
+    cout << "Your score is: " << score << "/" << NUM_QUESTIONS << endl;
+    cout << "Marked answers: " << marked_answers << endl;
+
+    return 0;
+}
