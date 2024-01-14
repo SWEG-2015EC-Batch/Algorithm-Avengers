@@ -1,1 +1,18 @@
 
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+    const int MAX_LENGTH = 50;
+    char program1[MAX_LENGTH] = "Breaking Bad";
+    char program2[MAX_LENGTH];
+
+    cout << "Enter the name of your second favorite TV program: ";
+    cin.getline(program2, MAX_LENGTH);
+
+    cout << "Your two favorite TV programs are: " << endl;
+    cout << program1 << endl;
+    cout << program2 << endl;
+
+    return 0;
+}
