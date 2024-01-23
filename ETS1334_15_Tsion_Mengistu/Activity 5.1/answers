@@ -1,1 +1,101 @@
+//pointers practical exercise
+// question 1 A
+#include <iostream>
 
+int main() {
+    double balance[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
+    
+    // Print the address of each array element
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Address of balance[" << i << "]: " << &balance[i] << std::endl;
+    }
+    
+    // Print the array elements using a pointer instead of the array index
+    double* ptr = balance;
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Value of balance[" << i << "] using pointer: " << *(ptr + i) << std::endl;
+    }
+    
+    // Print the array elements using another pointer
+    double* anotherPtr = &balance[0];
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Value of balance[" << i << "] using another pointer: " << *(anotherPtr + i) << std::endl;
+    }
+
+    return 0;
+}
+
+
+// question 1 B
+#include <iostream>
+
+int main() {
+    int arr[3][4] = { { 10, 11, 12, 13 }, { 20, 21, 22, 23 }, { 30, 31, 32, 33 } };
+
+    // Print the address of each array element
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
+            std::cout << "Address of arr[" << i << "][" << j << "]: " << &arr[i][j] << std::endl;
+        }
+    }
+
+    // Print the array elements using a pointer instead of the array index
+    int* ptr = &arr[0][0];
+    for (int i = 0; i < 3 * 4; i++) {
+        std::cout << "Value of arr using pointer: " << *(ptr + i) << std::endl;
+    }
+
+    // Print the array elements using another pointer
+    int* anotherPtr = arr[0];
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
+            std::cout << "Value of arr[" << i << "][" << j << "] using another pointer: " << *(anotherPtr + i * 4 + j) << std::endl;
+        }
+    }
+
+    return 0;
+}
+
+
+//answer for question number 2
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+const int N = 3; // Number of persons
+
+int main() {
+    double records[N][3]; // 2D array to store height, weight, and BMI
+    std::string names[N]; // Array to store full names
+
+    // Read the records
+    for (int i = 0; i < N; i++) {
+        std::cout << "Enter the full name of person " << i + 1 << ": ";
+        std::getline(std::cin >> std::ws, names[i]); // Read the full name
+
+        std::cout << "Enter the height (in meters) of person " << i + 1 << ": ";
+        std::cin >> records[i][0]; // Read the height
+
+        std::cout << "Enter the weight (in kilograms) of person " << i + 1 << ": ";
+        std::cin >> records[i][1]; // Read the weight
+
+        // Calculate BMI using pointers
+        double* heightPtr = &records[i][0];
+        double* weightPtr = &records[i][1];
+        double* bmiPtr = &records[i][2];
+        *bmiPtr = *weightPtr / (*heightPtr * *heightPtr);
+
+        std::cout << std::endl;
+    }
+
+    // Print the records in tabular format using pointer operations
+    std::cout << "------------------------------------------------------------------" << std::endl;
+    std::cout << "Full Name\tHeight (m)\tWeight (kg)\tBMI" << std::endl;
+    std::cout << "------------------------------------------------------------------" << std::endl;
+
+    for (int i = 0; i < N; i++) {
+        std::cout << names[i] << "\t\t" << records[i][0] << "\t\t" << records[i][1] << "\t\t" << records[i][2] << std::endl;
+    }
+
+    return 0;
+}
