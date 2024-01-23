@@ -1,0 +1,8 @@
+Value of ‘V’                                              Address of variable ‘V’ 
+Address of variable ‘V’ or value of pointer ‘ptr2’        Address of pointer ‘ptr2’
+Base address of array ‘Arr1’ or address of ‘Arr1[0]’      Base address of array ‘Arr1’
+Base address of array ‘Arr1[2]’                           Address of pointer ‘ptr1’
+Value of ‘V’ Address of variable ‘V’ 
+Address of variable ‘V’ or value of pointer ‘ptr2’          Address of pointer ‘ptr2’
+Base address of array ‘Arr1’ or address of ‘Arr1[0]’      Base address of array ‘Arr1’
+Base address of array ‘Arr2’ or address of ‘Arr2[0]’       Address of pointer ‘ptr1’
