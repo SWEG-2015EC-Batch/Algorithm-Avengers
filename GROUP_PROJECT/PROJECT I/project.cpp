@@ -40,14 +40,16 @@ cout<<" ***** WELCOME ****** "<<endl;
 
                 cout << "Enter customer sex (M/F): ";
                 cin >> sex;
-                if (sex!='m'||sex!='f'||sex!='M'||sex!='F'){
-                    cout<<" please enter in the appropriate format ( m or f ) ";
+                if (sex=='m'||sex=='f'||sex=='M'||sex=='F'){
 
-                    return 0;
-
-                }
                 cout << "Enter customer address: ";
                 cin >> address;
+
+                }
+                else{
+                    cout<<" please enter in the appropriate format ( m or f ) "<<endl;
+                    return 0;
+                }
 
                 bool isNewCustomer = true;
                 for (int i = 0; i < numCustomers; i++) {
