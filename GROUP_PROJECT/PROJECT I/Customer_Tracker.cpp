@@ -1,6 +1,8 @@
+// This program allows the user to manage a customer sales database
+
 #include <iostream>
 #include <string>
-#include<iomanip>
+#include <iomanip>
 using namespace std;
 
 const int MAX_CUSTOMERS = 100;
@@ -30,6 +32,7 @@ cout<<" ***** WELCOME ****** "<<endl;
         cout << "Enter your choice: ";
         cin >> choice;
 
+         // we use switch statements to handle user input and perform the appropriate action
         switch (choice) {
             case 1: {
                 string name, address;
