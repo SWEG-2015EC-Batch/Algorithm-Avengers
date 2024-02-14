@@ -7,7 +7,8 @@ using namespace std;
 
 const int MAX_CUSTOMERS = 100;
 
-struct Customer {
+struct Customer 
+{
     string name;
     char sex;
     string address;
@@ -22,7 +23,7 @@ int main() {
 
 cout<<" ***** WELCOME ****** "<<endl;
     while (true) {
-        cout << "Menu Options: \n"
+        cout << "\n Menu Options: \n"
                 "1. Add new customer \n"
                 "2. Search for a customer \n"
                 "3. Record a purchase \n"
@@ -56,8 +57,10 @@ cout<<" ***** WELCOME ****** "<<endl;
 
                 bool isNewCustomer = true;
                 for (int i = 0; i < numCustomers; i++) {
-                    if (customers[i].name == name) {
+                    if (customers[i].name == name) 
+					{
                         isNewCustomer = false;
+                        cout<<"Name already registered"<<endl;
                         break;
                     }
                 }
@@ -74,13 +77,13 @@ cout<<" ***** WELCOME ****** "<<endl;
                 break;
             }
             case 2: {
-                cout << "Enter customer ID or name to search: "<<endl;
+                cout << "Enter customer name to search: "<<endl;
                 string searchName;
                 cin >> searchName;
 
                 bool found = false;
                 for (int i = 0; i < numCustomers; i++) {
-                    if (customers[i].name == searchName || to_string(customers[i].code) == searchName) {
+                    if (customers[i].name == searchName ) {
                         found = true;
                         cout << "Customer Details:\n"
                              << "Name:  " << customers[i].name << "\n"
@@ -96,7 +99,9 @@ cout<<" ***** WELCOME ****** "<<endl;
                 break;
             }
             case 3: {
-                int customerCode, purchaseAmount;
+                int customerCode;
+                double totalSales = 0;
+                double purchaseAmount;
                 cout << "Enter customer code: ";
                 cin >> customerCode;
                 cout << "Enter purchase amount: ";
@@ -111,32 +116,32 @@ cout<<" ***** WELCOME ****** "<<endl;
                 break;
             }
             case 4: {
-
+            int choice2;
             cout<<" ***** please choose Report format ***** \n"
                   " 1. Detailed report \n"
                   " 2. Summary report \n"
                   " 3. exit"<<endl;
 
-            int choice2;
+            
             cin>>choice2;
 
             switch(choice2){
             case 1:{
 
                 cout << "........Detailed Report........\n";
-                cout << left<<setw(10) << "Customer Name: "
-                    << left<<setw(10)  << "Sex:  "
-                    << left<<setw(10)  << "Address:  "
-                    << left<<setw(10)  << "Customer Code:  "
-                    << left<<setw(10)  << "Total Sales:  "
-                    << left<<setw(10)  << "Average Sales:  "<<endl;
+                cout << left<<setw(20) << "Customer Name: "
+                    << left<<setw(20)  << "Sex:  "
+                    << left<<setw(20)  << "Address:  "
+                    << left<<setw(20)  << "Customer Code:  "
+                    << left<<setw(20)  << "Total Sales:  "
+                    << left<<setw(20)  << "Average Sales:  "<<endl;
                 for (int i = 0; i < numCustomers; i++) {
-                    cout << left<<setw(15)<< customers[i].name
-                         << left<<setw(15)<< customers[i].sex
-                         << left<<setw(10)<< customers[i].address
-                         << left<<setw(15) << customers[i].code
-                         << left<<setw(15) << customers[i].totalSales
-                         << left<<setw(15) << (customers[i].totalSales / customers[i].numPurchases) << endl;
+                    cout << left<<setw(20)<< customers[i].name
+                         << left<<setw(20)<< customers[i].sex
+                         << left<<setw(20)<< customers[i].address
+                         << left<<setw(20) << customers[i].code
+                         << left<<setw(20) << customers[i].totalSales
+                         << left<<setw(20) << (customers[i].totalSales / customers[i].numPurchases) << endl;
                 }
                 break;
             }
